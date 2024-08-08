@@ -1,0 +1,71 @@
+{
+  "name": "mobx-clone",
+  "version": "0.0.1",
+  "description": "Mobx clone made for fun",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "mobx",
+    "state management",
+    "reactive",
+    "observable"
+  ],
+  "author": "Denis Marushchak",
+  "license": "MIT",
+  "homepage": "https://github.com/nova4u/mobx-clone#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nova4u/mobx-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nova4u/mobx-clone/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vitest run && rollup -c ",
+    "watch": "rollup -c -w",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.20.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "happy-dom": "^14.12.3",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react/index.es.js",
+      "require": "./dist/react/index.js",
+      "types": "./dist/react/index.d.ts"
+    }
+  }
+}
