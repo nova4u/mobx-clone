@@ -10,13 +10,12 @@ const myStore = store({
   name: { firstName: "Denis", lastName: "M" },
 });
 
-const ComponentA = observer(({ test }: { test: string }) => {
+const ComponentA = observer(({ test }: { test: number }) => {
   console.log("rerender ComponentA");
 
   useEffect(() => {
     const dispose = autorun(() => {
-      // console.log("name changed", myStore.name.lastName);
-      // console.log("b changed", myStore.b);
+      console.log("name changed", myStore.name.lastName);
     });
 
     return dispose;
@@ -26,10 +25,7 @@ const ComponentA = observer(({ test }: { test: string }) => {
     <>
       a: {myStore.a}
       lastName: {myStore.name.lastName}
-      <input
-        value={myStore.name.lastName}
-        onChange={(e) => (myStore.name.lastName = e.target.value)}
-      />
+      <input value={myStore.name.lastName} onChange={(e) => (myStore.name.lastName = e.target.value)} />
       <button
         onClick={() => {
           myStore.a = myStore.a + 1;
@@ -56,9 +52,7 @@ function App() {
   return (
     <div className="App">
       test: {test}
-      <button onClick={() => setMount((prev) => !prev)}>
-        {mount ? "Unmount" : "Mount"}
-      </button>
+      <button onClick={() => setMount((prev) => !prev)}>{mount ? "Unmount" : "Mount"}</button>
       <button
         onClick={() => {
           setTest(test + 1);
@@ -88,7 +82,6 @@ function App() {
       <br />
       <br />
       <br />
-      {/* @ts-ignore */}
       {mount && <ComponentA test={test} />}
     </div>
   );

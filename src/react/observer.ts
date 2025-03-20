@@ -1,10 +1,8 @@
 import { FC, memo, useState, useCallback } from "react";
 import { readValues, StoreProps } from "../core/store";
 
-export function observer<P extends Record<string, unknown>>(
-  ObservableComponent: FC<P>
-) {
-  return memo(function ObserverWrapper(props) {
+export function observer<P extends object = {}>(ObservableComponent: FC<P>) {
+  return memo(function ObserverWrapper(props: P) {
     const [, rerender] = useState({});
     const update = useCallback(() => rerender({}), []);
 
