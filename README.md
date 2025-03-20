@@ -12,8 +12,20 @@ A lightweight, reactive state management library inspired by MobX, built for fun
 ## Installation
 
 ```bash
-npm install mobx-clone
+# Clone the repository
+git clone https://github.com/nova4u/mobx-clone.git
+
+# Navigate to the project directory
+cd mobx-clone
+
+# Install dependencies
+pnpm install
+
+# Build the project (if needed)
+pnpm build
 ```
+
+You can then import and use it in your local projects by linking or copying the necessary files.
 
 ## Usage
 
